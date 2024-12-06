@@ -57,14 +57,16 @@ const ThreeDModel = () => {
         scene.add(groundMesh);
 
         // SpotLight
-        const spotLight = new THREE.SpotLight(0xffffff, 3000, 100, 0.22, 1);
+        const spotLight = new THREE.SpotLight(0xffffff, 6000, 100, 0.32, 1);
         spotLight.position.set(0, 25, 0);
         spotLight.castShadow = true;
         spotLight.shadow.bias = -0.0001;
         scene.add(spotLight);
 
+        const hemisphereLight = new THREE.HemisphereLight(0Xffffff,0xffffff)
+        scene.add(hemisphereLight);
         // GLTF Loader
-        const loader = new GLTFLoader().setPath('/millennium_falcon/');
+        const loader = new GLTFLoader().setPath('/bmw_m5tm/');
         loader.load(
             'scene.gltf',
             (gltf) => {
